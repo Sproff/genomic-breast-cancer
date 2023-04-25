@@ -6,7 +6,6 @@ import { customTheme } from "@styles/themes";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import "react-toastify/dist/ReactToastify.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
 	const [loading, setLoading] = useState<boolean>(false);
