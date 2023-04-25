@@ -1,0 +1,30 @@
+const customColors = {
+	brand: {
+		white100: "rgba(255, 255, 255, 1)",
+		white200: "rgba(255, 255, 255, 0.8)",
+		white300: "rgba(245, 241, 238, 1)",
+		white400: "		rgba(239, 239, 239, 1)",
+		white500: "rgba(255, 255, 255, 0.6)",
+		white600: "rgba(204, 204, 204, 1)",
+		white700: "rgba(255, 253, 248, 1)",
+		white800: "rgba(210, 210, 210, 0.25)",
+		dark100: "rgba(0, 0, 0, 1)",
+		dark200: "rgba(25, 36, 52, 1)",
+		dark300: "rgba(30, 30, 30, 1)",
+		dark400: "rgba(38, 52, 70, 1)",
+		dark500: "rgba(21, 21, 21, 0.68)",
+		dark600: "rgba(15, 15, 15, 1)",
+		gray100: "rgba(141, 144, 145, 1)",
+		gray200: "rgba(91, 102, 118, 1)",
+		gold100: "rgba(203, 160, 82, 1)",
+		gold200: "rgba(203, 160, 82, 0.8)",
+		gold300: "rgba(203, 160, 82, 0.2)",
+		gold400: "rgba(204, 187, 170, 0.2)",
+		gold500: "rgba(238, 222, 193, 0.2)",
+		blue100: "rgba(39, 52, 106, 1)",
+		red100: "rgba(255, 0 ,0, 1)",
+		midweek_bg: "url('/assets/images/midweek-bg.png')",
+	},
+};
+
+export { customColors };
