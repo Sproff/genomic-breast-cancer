@@ -29,12 +29,12 @@ const Header = () => {
 		},
 		animate: (idx: number) => ({
 			background: isInView
-				? idx > 120
+				? idx > 200
 					? "rgba(255, 255, 255, 1)"
 					: "rgba(255, 255, 255, 0.8)"
 				: "rgba(255, 255, 255, 0.8)",
 			boxShadow: isInView
-				? idx > 120
+				? idx > 200
 					? "0px 1px 5px rgb(105 108 128)"
 					: "0"
 				: "0",

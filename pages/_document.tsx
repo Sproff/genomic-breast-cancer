@@ -10,9 +10,9 @@ const GenomicBreastCancer = () => {
 		}
 	}, []);
 
-	const title = "Genomic Breast Cancer | Study the genomics of breast cancer.";
+	const title = "Genomic data visualization";
 	const description =
-		"Genomic Breast Cancer | Study the genomics of breast cancer. Explore diverse genomic datasets to identify potential biomarkers and treatment targets. Regularly updated.";
+		"Genomic data visualization | Creating visual representations of genomic data, such as DNA sequences, genetic mutations, and gene expression patterns. Explore diverse genomic datasets to identify potential biomarkers and treatment targets. Regularly updated.";
 	const ogImageUrl = "";
 	const twitterHandle = "@dev_sproff";
 

@@ -14,7 +14,7 @@ const Hero = () => {
 				flexDir="column"
 				align="flex-start"
 				justify="center"
-				h={["100vh", "100vh", "60vh", "80vh", "100vh"]}
+				h={["100vh", "100vh", "80vh", "80vh", "100vh"]}
 				maxW="1200px"
 				mx="auto"
 				pl="2rem"
