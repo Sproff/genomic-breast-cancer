@@ -5,7 +5,7 @@ const globalStyles = {
 			scrollBehavior: "smooth !important",
 		},
 		body: {
-			fontFamily: "'Playfair Display', serif",
+			fontFamily: "'Syne', sans-serif",
 			fontSize: "1.6rem",
 		},
 	},

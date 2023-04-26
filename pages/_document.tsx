@@ -51,7 +51,7 @@ const GenomicBreastCancer = () => {
 				/>
 				<link rel="manifest" href="/site.webmanifest" />
 
-				<link rel="canonical" href="https://leyesam.vercel.app" />
+				<link rel="canonical" href="https://genomic-breast-cancer.vercel.app" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
 				<link
 					rel="preconnect"
@@ -59,7 +59,7 @@ const GenomicBreastCancer = () => {
 					crossOrigin=""
 				/>
 				<link
-					href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+					href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap"
 					rel="stylesheet"
 				/>
 

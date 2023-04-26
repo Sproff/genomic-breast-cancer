@@ -1,6 +1,5 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { CustomLoader } from "@components/animations/CustomLoader";
-import { Fonts } from "@fonts/index";
 import "@styles/globals.css";
 import { customTheme } from "@styles/themes";
 import type { AppProps } from "next/app";
@@ -32,7 +31,6 @@ const App = ({ Component, pageProps }: AppProps) => {
 				<meta name="msapplication-TileColor" content="#ffffff" />
 				<meta name="theme-color" content="#ffffff" />
 			</Head>
-			<Fonts />
 
 			{loading ? <CustomLoader /> : <Component {...pageProps} />}
 		</ChakraProvider>
