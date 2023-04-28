@@ -219,7 +219,6 @@ const Hero = () => {
 						</Fragment>
 					)}
 				</Box>
-				)
 			</Box>
 		</Box>
 	);

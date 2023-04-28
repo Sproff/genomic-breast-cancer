@@ -11,6 +11,7 @@ import {
 	Th,
 	Thead,
 	Tr,
+	Center,
 } from "@chakra-ui/react";
 import {
 	flexRender,
@@ -208,7 +209,11 @@ const CustomTableLayout = (props: any) => {
 						</HStack>
 					</HStack>
 				</Box>
-			) : null}
+			) : (
+				<Center>
+					<Text>No data available, Check back later!</Text>
+				</Center>
+			)}
 		</Box>
 	);
 };
