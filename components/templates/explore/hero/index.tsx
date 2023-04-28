@@ -1,4 +1,4 @@
-import { Box, HStack, Text } from "@chakra-ui/react";
+import { Box, Center, HStack, Icon, Text } from "@chakra-ui/react";
 import { TableLoader } from "@components/templates/loader/TableLoader";
 import { Input } from "@components/ui/forms/Input";
 import {
@@ -10,13 +10,16 @@ import { BreastCancerDataProps } from "@interfaces/page";
 import { IGenomicProps } from "@interfaces/tableDefinitions";
 import { CustomTableLayout } from "@layouts/TableLayout";
 import { ColumnDef } from "@tanstack/react-table";
-import { useMemo, useState } from "react";
+import Link from "next/link";
+import { Fragment, useMemo, useState } from "react";
+import { AiFillEye } from "react-icons/ai";
 
 const Hero = () => {
 	const [inputSearch, setInputSearch] = useState("");
 	const timedValue = useDebounce(inputSearch, 1000);
 	const { data: breastCancerData, isLoading: breastCancerIsLoading } =
 		useGetAllBreastCancers();
+
 	const {
 		data: singleBreastCancerData,
 		isLoading: singleBreastCancerIsLoading,
@@ -106,12 +109,31 @@ const Hero = () => {
 		},
 		{
 			accessorKey: "type",
-			size: 10,
+			size: 1,
 			cell: ({ getValue }) => {
 				return (
 					<HStack>
 						<Text>{getValue() as unknown as string}</Text>
 					</HStack>
+				);
+			},
+		},
+		{
+			accessorKey: "action",
+			size: 5,
+			cell: ({ row }) => {
+				return (
+					<Link href={`/explore/${row?.original?.id}`}>
+						<Center>
+							<Icon
+								cursor="pointer"
+								color="brand.gray100"
+								fontSize="2.1rem"
+								as={AiFillEye}
+								_hover={{ color: "brand.dark100" }}
+							/>
+						</Center>
+					</Link>
 				);
 			},
 		},
@@ -184,11 +206,20 @@ const Hero = () => {
 					{breastCancerIsLoading || singleBreastCancerIsLoading ? (
 						<TableLoader />
 					) : (
-						<CustomTableLayout
-							{...{ columns: genomicColumn, data: tableData }}
-						/>
+						<Fragment>
+							{breastCancerData?.data?.breastCancers?.length !== 0 ? (
+								<CustomTableLayout
+									{...{ columns: genomicColumn, data: tableData }}
+								/>
+							) : (
+								<Center>
+									<Text>No data available, Check back later!</Text>
+								</Center>
+							)}
+						</Fragment>
 					)}
 				</Box>
+				)
 			</Box>
 		</Box>
 	);

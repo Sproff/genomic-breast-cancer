@@ -1,5 +1,5 @@
 export interface IGenomicProps {
-	_id: string;
+	id: string;
 	commonName: string;
 	description: string;
 	geneId: string;
