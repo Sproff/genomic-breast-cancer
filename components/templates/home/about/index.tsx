@@ -2,7 +2,7 @@ import { Box, Text } from "@chakra-ui/react";
 
 const About = () => {
 	return (
-		<Box bg="brand.white200" id="about">
+		<Box bg="brand.white300" id="about">
 			<Box maxW="1200px" mx="auto" py="8rem" px="2rem">
 				<Text
 					textAlign="center"
@@ -15,7 +15,7 @@ const About = () => {
 				</Text>
 
 				<Box mt="5rem">
-					<Text>
+					<Text fontSize={["1.6rem", "1.6rem", "1.7rem"]}>
 						Genomic data visualization is the process of creating visual
 						representations of genomic data, such as DNA sequences, genetic
 						mutations, and gene expression patterns. This approach allows

@@ -65,7 +65,11 @@ const Header = () => {
 					<Container maxW="1200px" mx="auto" px="2rem" py="1.2rem">
 						<Flex justify="space-between" align="center">
 							<Link href="/">
-								<Text color="brand.white100" fontWeight="800" fontSize="3rem">
+								<Text
+									color="brand.white100"
+									fontWeight="800"
+									fontSize={["2rem", "3rem"]}
+								>
 									GDV
 								</Text>
 							</Link>

@@ -1,4 +1,4 @@
-import { Box, Center, Icon, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Icon, SimpleGrid, Text } from "@chakra-ui/react";
 import { SiMicrogenetics } from "react-icons/si";
 import { FaBacteria } from "react-icons/fa";
 import { BiDna } from "react-icons/bi";
@@ -23,7 +23,7 @@ const Features = () => {
 		},
 	];
 	return (
-		<Box bg="brand.white300">
+		<Box bg="brand.white200">
 			<Box maxW="1200px" mx="auto" py="8rem" px="2rem">
 				<Text
 					textAlign="center"
@@ -38,18 +38,16 @@ const Features = () => {
 				<SimpleGrid columns={[1, 2, 2, 2, 3, 3]} spacing={20} mt="5rem">
 					{featuresData.map((item, idx) => (
 						<Box key={idx}>
-							<Center mb="2rem">
-								<Icon
-									color="brand.gray100"
-									fontSize="3rem"
-									fontWeight="300"
-									as={item.icon}
-								/>
-							</Center>
-							<Text fontSize={["2rem", "2rem", "2.5rem"]} fontWeight="600">
+							<Icon
+								color="brand.gray100"
+								fontSize="3.5rem"
+								fontWeight="300"
+								as={item.icon}
+							/>
+							<Text fontSize={["2rem", "2rem", "2.2rem"]} fontWeight="600">
 								{item.name}
 							</Text>
-							<Text fontSize={["1.6rem", "1.6rem", "2rem"]}>{item.desc}</Text>
+							<Text fontSize={["1.6rem", "1.6rem", "1.7rem"]}>{item.desc}</Text>
 						</Box>
 					))}
 				</SimpleGrid>

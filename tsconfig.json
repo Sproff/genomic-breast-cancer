@@ -23,7 +23,9 @@
 			"@public/*": ["./public/*"],
 			"@interfaces/*": ["./interfaces/*"],
 			"@fonts/*": ["./fonts/*"],
-			"@queries/*": ["./queries/*"]
+			"@queries/*": ["./queries/*"],
+			"@hooks/*": ["./hooks/*"],
+			"@config/*": ["./config/*"],
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

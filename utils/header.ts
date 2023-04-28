@@ -11,6 +11,6 @@ export const headerData: HeaderProps[] = [
 	{
 		icon: BsGithub,
 		title: "GitHub",
-		url: "https://github.com/Sproff",
+		url: "https://github.com/Sproff/genomic-data-visualization",
 	},
 ];

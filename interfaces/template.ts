@@ -1,5 +1,3 @@
-import { CSSProperties } from "react";
-
 export interface ButtonProps {
 	text: string;
 	bg: string;
@@ -24,22 +22,11 @@ export interface FormValues {
 
 export interface InputProps {
 	id: string;
-	placeholder: string;
-	type?: string;
 	value?: string | number;
-	leftAddon?: React.ReactChild;
-	leftElement?: React.ReactElement;
-	errorMessage: string | undefined | any;
-	style?: CSSProperties;
-	accept?: string;
-	ref?: React.RefObject<HTMLInputElement>;
 	onChange?: React.ChangeEventHandler<HTMLInputElement>;
-	multiple?: boolean;
 	color?: string;
 	placeholderColor?: string;
 	bg?: string;
 	border?: string;
-	// formHook: UseFormRegisterReturn;
 	isDisabled?: boolean;
-	isTypePhone?: boolean;
 }
