@@ -8,9 +8,19 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import {
+	Chart as ChartJS,
+	ArcElement,
+	Tooltip,
+	Legend,
+	CategoryScale,
+	LinearScale,
+} from "chart.js";
 import { CustomLoader } from "@components/animations/CustomLoader";
 import "@styles/globals.css";
 import { customTheme } from "@styles/themes";
+
+ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale);
 
 const App = ({ Component, pageProps }: AppProps) => {
 	const [loading, setLoading] = useState<boolean>(false);

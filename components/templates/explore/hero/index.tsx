@@ -1,11 +1,13 @@
 import { Box, Center, HStack, Icon, Text } from "@chakra-ui/react";
 import { TableLoader } from "@components/templates/loader/TableLoader";
+import { PieChart } from "@components/ui/charts/PieChart";
 import { Input } from "@components/ui/forms/Input";
 import {
 	useGetAllBreastCancers,
 	useGetSingleBreastCancer,
 } from "@hooks/breastCancers/useBreastCancer";
 import { useDebounce } from "@hooks/debounce/useDebounce";
+import { ChartData, ChartOptions } from "@interfaces/chart";
 import { BreastCancerDataProps } from "@interfaces/page";
 import { IGenomicProps } from "@interfaces/tableDefinitions";
 import { CustomTableLayout } from "@layouts/TableLayout";
@@ -154,6 +156,87 @@ const Hero = () => {
 			type: item.type,
 		}));
 	}, [breastCancerData, singleBreastCancerData]);
+	console.log("breastCancerData", breastCancerData);
+
+	const chartDataPie: ChartData = {
+		labels: [
+			"commonName",
+			"geneId",
+			"orientation",
+			"symbol",
+			"taxId",
+			"taxname",
+			"type",
+		],
+		datasets: [
+			{
+				label: "# of Data",
+				data: ["12", "19", "3", "5", "2", "3", "6"],
+				backgroundColor: [
+					"rgba(255, 99, 132, 0.2)",
+					"rgba(54, 162, 235, 0.2)",
+					"rgba(255, 206, 86, 0.2)",
+					"rgba(75, 192, 192, 0.2)",
+					"rgba(153, 102, 255, 0.2)",
+					"rgba(13, 02, 225, 0.2)",
+					"rgba(255, 159, 64, 0.2)",
+				],
+				borderColor: [
+					"rgba(255, 99, 132, 1)",
+					"rgba(54, 162, 235, 1)",
+					"rgba(255, 206, 86, 1)",
+					"rgba(75, 192, 192, 1)",
+					"rgba(153, 102, 255, 1)",
+					"rgba(13, 02, 225, 1)",
+					"rgba(255, 159, 64, 1)",
+				],
+				borderWidth: 1,
+			},
+		],
+	};
+
+	const chartOptsPie: ChartOptions = {
+		responsive: true,
+		plugins: {
+			legend: {
+				position: "top" as const,
+				display: true,
+			},
+		},
+		layout: {
+			padding: {
+				// left: 200,
+				// right: 0,
+				// top: 5,
+				// bottom: 0,
+				left: 0,
+				right: 0,
+				top: 0,
+				bottom: 0,
+			},
+		},
+		scales: {
+			x: {
+				grid: {
+					display: false,
+				},
+				ticks: {
+					color: "brand.gray100",
+					fontSize: "0.8rem",
+					fontWeight: "600",
+				},
+			},
+			y: {
+				grid: {
+					display: false,
+					drawBorder: true,
+				},
+				ticks: {
+					display: true,
+				},
+			},
+		},
+	};
 
 	return (
 		<Box
@@ -203,21 +286,35 @@ const Hero = () => {
 			</Box>
 			<Box bg="brand.white300">
 				<Box maxW="1200px" mx="auto" px="2rem" py="2rem">
-					{breastCancerIsLoading || singleBreastCancerIsLoading ? (
-						<TableLoader />
-					) : (
-						<Fragment>
-							{breastCancerData?.data?.breastCancers?.length !== 0 ? (
-								<CustomTableLayout
-									{...{ columns: genomicColumn, data: tableData }}
-								/>
-							) : (
-								<Center>
-									<Text>No data available, Check back later!</Text>
-								</Center>
-							)}
-						</Fragment>
-					)}
+					<Box>
+						{breastCancerIsLoading || singleBreastCancerIsLoading ? (
+							<TableLoader />
+						) : (
+							<Fragment>
+								{breastCancerData?.data?.breastCancers?.length !== 0 ? (
+									<Box>
+										<Text
+											fontSize="2rem"
+											fontWeight="800"
+											textAlign="center"
+											mb="2rem"
+										>
+											Tabular Visualization
+										</Text>
+										<CustomTableLayout
+											{...{ columns: genomicColumn, data: tableData }}
+										/>
+									</Box>
+								) : (
+									<Center>
+										<Text>No data available, Check back later!</Text>
+									</Center>
+								)}
+							</Fragment>
+						)}
+					</Box>
+
+					<PieChart {...{ data: chartDataPie, options: chartOptsPie }} />
 				</Box>
 			</Box>
 		</Box>
