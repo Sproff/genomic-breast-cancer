@@ -67,10 +67,13 @@ const GenomicBreastCancer = () => {
 				<meta property="og:title" content={title} />
 				<meta property="og:description" content={description} />
 				<meta property="og:image" content={ogImageUrl} />
-				<meta property="og:url" content={currentUrl} />
+				<meta
+					property="og:url"
+					content="https://genomic-data-visualization.vercel.app"
+				/>
 				<meta property="og:type" content="website" />
-				<meta property="og:image:width" content="1200" />
-				<meta property="og:image:height" content="630" />
+				<meta property="og:image:width" content={ogImageUrl} />
+				{/* <meta property="og:image:height" content="630" /> */}
 
 				{/* Twitter Card tags */}
 				<meta name="twitter:card" content="summary_large_image" />
