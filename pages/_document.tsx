@@ -13,7 +13,7 @@ const GenomicBreastCancer = () => {
 	const title = "Genomic data visualization";
 	const description =
 		"Genomic data visualization | Creating visual representations of genomic data, such as DNA sequences, genetic mutations, and gene expression patterns. Explore diverse genomic datasets to identify potential biomarkers and treatment targets. Regularly updated.";
-	const ogImageUrl = "";
+	const ogImageUrl = "/public/assets/images/og-image.png";
 	const twitterHandle = "@dev_sproff";
 
 	return (
