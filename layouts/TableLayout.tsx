@@ -151,7 +151,7 @@ const CustomTableLayout = (props: any) => {
 							<Text fontSize={["1.2rem", "1.2rem", "1.2rem", "1.4rem"]}>
 								Showing{" "}
 								{props.currentPage === 1 ? "1" : `${pageSize * pageIndex + 1}`}{" "}
-								- {pageIndex === 0 ? data.length : props.count} of {props.count}{" "}
+								- {pageIndex === 0 ? data.length : props.count} of {data.length}{" "}
 								result(s)
 							</Text>
 						</Box>

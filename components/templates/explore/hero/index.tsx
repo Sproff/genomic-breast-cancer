@@ -280,10 +280,10 @@ const Hero = () => {
 
 					{breastCancerIsLoading || singleBreastCancerIsLoading ? (
 						<Center mt="8rem">
-							<VStack>
+							<VStack w="100%">
 								<TextLoader />
 								<LongRectangleCardLoader />
-								<CircleCardLoader />
+								<CircleCardLoader size={["30rem", "50rem", "50rem", "50rem"]} />
 							</VStack>
 						</Center>
 					) : (

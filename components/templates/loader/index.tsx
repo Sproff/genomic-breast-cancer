@@ -38,7 +38,7 @@ const TableLoader = () => {
 	);
 };
 
-const CircleCardLoader = ({ size = "50rem" }) => {
+const CircleCardLoader = ({ size }: { size: string[] }) => {
 	return <SkeletonCircle {...{ size }} />;
 };
 

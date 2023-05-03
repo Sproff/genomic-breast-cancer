@@ -1,19 +1,10 @@
 import { Html, Head, Main, NextScript } from "next/document";
-import { useEffect, useState } from "react";
 
 const GenomicBreastCancer = () => {
-	const [currentUrl, setCurrentUrl] = useState("");
-
-	useEffect(() => {
-		if (typeof window !== "undefined") {
-			setCurrentUrl(window.location.href);
-		}
-	}, []);
-
 	const title = "Genomic data visualization";
 	const description =
 		"Genomic data visualization | Creating visual representations of genomic data, such as DNA sequences, genetic mutations, and gene expression patterns. Explore diverse genomic datasets to identify potential biomarkers and treatment targets. Regularly updated.";
-	const ogImageUrl = "/assets/images/og-image.png";
+	const ogImageUrl = "/og-image.png";
 	const twitterHandle = "@dev_sproff";
 
 	return (
@@ -73,7 +64,6 @@ const GenomicBreastCancer = () => {
 				/>
 				<meta property="og:type" content="website" />
 				<meta property="og:image" content={ogImageUrl} />
-				{/* <meta property="og:image:height" content="630" /> */}
 
 				{/* Twitter Card tags */}
 				<meta name="twitter:card" content="summary_large_image" />
