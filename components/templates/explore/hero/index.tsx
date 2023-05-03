@@ -1,4 +1,4 @@
-import { Box, Center, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import { Box, Center, HStack, Text, VStack } from "@chakra-ui/react";
 import {
 	CircleCardLoader,
 	LongRectangleCardLoader,
