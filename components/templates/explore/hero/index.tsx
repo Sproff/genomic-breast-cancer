@@ -18,9 +18,7 @@ import { IGenomicProps } from "@interfaces/tableDefinitions";
 import { CustomTableLayout } from "@layouts/TableLayout";
 import { ColumnDef } from "@tanstack/react-table";
 import { formatData } from "@utils/explore";
-import Link from "next/link";
 import { Fragment, useMemo, useState } from "react";
-import { AiFillEye } from "react-icons/ai";
 
 const Hero = () => {
 	const [inputSearch, setInputSearch] = useState("");
@@ -123,25 +121,6 @@ const Hero = () => {
 					<HStack>
 						<Text>{getValue() as unknown as string}</Text>
 					</HStack>
-				);
-			},
-		},
-		{
-			accessorKey: "action",
-			size: 5,
-			cell: ({ row }) => {
-				return (
-					<Link href={`/explore/${row?.original?.id}`}>
-						<Center>
-							<Icon
-								cursor="pointer"
-								color="brand.gray100"
-								fontSize="2.1rem"
-								as={AiFillEye}
-								_hover={{ color: "brand.dark100" }}
-							/>
-						</Center>
-					</Link>
 				);
 			},
 		},
