@@ -46,7 +46,7 @@ const PieChart = ({
 				Graphical Visualization
 			</Text>
 			<Box>
-				<Pie {...{ data, options }} />
+				<Pie {...{ data, options }} height={500} width={700} />
 			</Box>
 		</Box>
 	);

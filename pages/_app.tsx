@@ -16,9 +16,9 @@ import {
 	CategoryScale,
 	LinearScale,
 } from "chart.js";
-import { CustomLoader } from "@components/animations/CustomLoader";
 import "@styles/globals.css";
 import { customTheme } from "@styles/themes";
+import { CustomLoader } from "@components/templates/loader";
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale);
 

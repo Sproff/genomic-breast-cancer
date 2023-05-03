@@ -1,5 +1,10 @@
-import { Box, Center, HStack, Icon, Text } from "@chakra-ui/react";
-import { TableLoader } from "@components/templates/loader/TableLoader";
+import { Box, Center, HStack, Icon, Text, VStack } from "@chakra-ui/react";
+import {
+	CircleCardLoader,
+	LongRectangleCardLoader,
+	TableLoader,
+	TextLoader,
+} from "@components/templates/loader";
 import { PieChart } from "@components/ui/charts/PieChart";
 import { Input } from "@components/ui/forms/Input";
 import {
@@ -12,6 +17,7 @@ import { BreastCancerDataProps } from "@interfaces/page";
 import { IGenomicProps } from "@interfaces/tableDefinitions";
 import { CustomTableLayout } from "@layouts/TableLayout";
 import { ColumnDef } from "@tanstack/react-table";
+import { formatData } from "@utils/explore";
 import Link from "next/link";
 import { Fragment, useMemo, useState } from "react";
 import { AiFillEye } from "react-icons/ai";
@@ -156,7 +162,10 @@ const Hero = () => {
 			type: item.type,
 		}));
 	}, [breastCancerData, singleBreastCancerData]);
-	console.log("breastCancerData", breastCancerData);
+
+	const pieChartFormattedData = formatData(
+		breastCancerData?.data?.breastCancers
+	);
 
 	const chartDataPie: ChartData = {
 		labels: [
@@ -171,7 +180,15 @@ const Hero = () => {
 		datasets: [
 			{
 				label: "# of Data",
-				data: ["12", "19", "3", "5", "2", "3", "6"],
+				data: [
+					pieChartFormattedData.commonName?.length?.toString(),
+					pieChartFormattedData.geneId?.length?.toString(),
+					pieChartFormattedData.orientation?.length?.toString(),
+					pieChartFormattedData.symbol?.length?.toString(),
+					pieChartFormattedData.taxId?.length?.toString(),
+					pieChartFormattedData.taxname?.length?.toString(),
+					pieChartFormattedData.type?.length?.toString(),
+				],
 				backgroundColor: [
 					"rgba(255, 99, 132, 0.2)",
 					"rgba(54, 162, 235, 0.2)",
@@ -197,43 +214,11 @@ const Hero = () => {
 
 	const chartOptsPie: ChartOptions = {
 		responsive: true,
+		maintainAspectRatio: false,
 		plugins: {
 			legend: {
 				position: "top" as const,
 				display: true,
-			},
-		},
-		layout: {
-			padding: {
-				// left: 200,
-				// right: 0,
-				// top: 5,
-				// bottom: 0,
-				left: 0,
-				right: 0,
-				top: 0,
-				bottom: 0,
-			},
-		},
-		scales: {
-			x: {
-				grid: {
-					display: false,
-				},
-				ticks: {
-					color: "brand.gray100",
-					fontSize: "0.8rem",
-					fontWeight: "600",
-				},
-			},
-			y: {
-				grid: {
-					display: false,
-					drawBorder: true,
-				},
-				ticks: {
-					display: true,
-				},
 			},
 		},
 	};
@@ -314,7 +299,17 @@ const Hero = () => {
 						)}
 					</Box>
 
-					<PieChart {...{ data: chartDataPie, options: chartOptsPie }} />
+					{breastCancerIsLoading || singleBreastCancerIsLoading ? (
+						<Center mt="8rem">
+							<VStack>
+								<TextLoader />
+								<LongRectangleCardLoader />
+								<CircleCardLoader />
+							</VStack>
+						</Center>
+					) : (
+						<PieChart {...{ data: chartDataPie, options: chartOptsPie }} />
+					)}
 				</Box>
 			</Box>
 		</Box>

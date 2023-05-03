@@ -11,6 +11,7 @@ export interface FeaturesProps {
 }
 
 export interface BreastCancerDataProps {
+	[key: string]: string;
 	_id: string;
 	commonName: string;
 	description: string;

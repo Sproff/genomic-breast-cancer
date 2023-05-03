@@ -19,7 +19,6 @@ export const Input = ({
 		>
 			<InputGroup>
 				<CInput
-					cursor="pointer"
 					id={id}
 					defaultValue={value}
 					placeholder="Search based on either commonName, geneId, orientation, symbol, taxId, taxname, type"

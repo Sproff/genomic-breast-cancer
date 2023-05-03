@@ -11,39 +11,11 @@ export interface ChartData {
 
 export interface ChartOptions {
 	responsive: boolean;
+	maintainAspectRatio: boolean;
 	plugins: {
 		legend: {
 			position: "top" | "left" | "bottom" | "right";
 			display: boolean;
-		};
-	};
-	layout: {
-		padding: {
-			left: number;
-			right: number;
-			top: number;
-			bottom: number;
-		};
-	};
-	scales: {
-		x: {
-			grid: {
-				display: boolean;
-			};
-			ticks: {
-				color: string;
-				fontSize: string;
-				fontWeight: string;
-			};
-		};
-		y: {
-			grid: {
-				display: boolean;
-				drawBorder: boolean;
-			};
-			ticks: {
-				display: boolean;
-			};
 		};
 	};
 }
