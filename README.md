@@ -16,6 +16,6 @@ This project will be updated on a regular basis. Feel free to make a Pull Reques
 
 ## License
 
-Copyright © 2022 | Genomic Data Visualization. All rights reserved
+Copyright © 2023 | Genomic Data Visualization. All rights reserved
 
 ## Don't forget to drop a star and follow me:+1:
